@@ -1,7 +1,7 @@
 # Maintainer: Oliver Kraitschy <okraits at arcor dot de>
 
 pkgname=omodoro-git
-pkgver=r10.51b537b
+pkgver=r14.f50a2e6
 pkgrel=1
 pkgdesc='Simple commandline tool to use the pomodoro technique'
 arch=('any')
