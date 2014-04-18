@@ -24,7 +24,9 @@ package() {
 
   install -Dm755 j4-make-config  "${pkgdir}/usr/bin/j4-make-config"
   install -Dm644 README.md  "${pkgdir}/usr/share/doc/${pkgname}/README"
-  install -d themes  "${pkgdir}/usr/share/${pkgname}/themes"
+  install -d "${pkgdir}/usr/share/${pkgname}/themes"
+  install -Dm644 themes/*  "${pkgdir}/usr/share/${pkgname}/themes/"
+
 }
 
 # vim:set ts=2 sw=2 et:
