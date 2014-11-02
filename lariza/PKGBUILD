@@ -10,6 +10,7 @@ license=('GPL')
 depends=('gtk2' 'webkitgtk2')
 makedepends=('git')
 provides=('lariza')
+conflicts=('lariza')
 source=('git://github.com/okraits/lariza.git')
 sha1sums=('SKIP')
 
