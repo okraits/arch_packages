@@ -1,0 +1,36 @@
+# Maintainer: Oliver Kraitschy <okraits at arcor dot de>
+
+pkgname=breasy-git
+pkgver=r21.57991e5
+pkgrel=1
+pkgdesc='simple and fast Qt5 based webbrowser'
+arch=('i686' 'x86_64')
+url='https://github.com/okraits/breasy'
+license=('GPL')
+depends=('qt5-webkit')
+makedepends=('git' 'qt5-base')
+provides=('breasy-git')
+conflicts=('breasy-git')
+source=('git://github.com/okraits/breasy.git')
+sha1sums=('SKIP')
+
+_gitname='breasy'
+
+pkgver() {
+  cd "$_gitname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+build() {
+  cd "$_gitname"
+  qmake-qt5
+  make 
+}
+package() {
+  cd "$_gitname"
+
+  install -Dm755 breasy  "${pkgdir}/usr/bin/breasy"
+  install -Dm644 README.md  "${pkgdir}/usr/share/doc/${pkgname}/README"
+
+}
+
+# vim:set ts=2 sw=2 et:
